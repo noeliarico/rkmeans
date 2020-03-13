@@ -15,7 +15,8 @@ Imports:
     dists (>= 0.1.0),
     purrr,
     consensus (>= 0.1.0),
-    dplyr
+    dplyr,
+    tibble
 Remotes: 
     noeliarico/dists
 RoxygenNote: 7.0.2
