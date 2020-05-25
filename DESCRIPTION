@@ -10,7 +10,9 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    testthat (>= 2.1.0)
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
 Imports: 
     dists (>= 0.1.0),
     purrr,
@@ -20,3 +22,4 @@ Imports:
 Remotes: 
     noeliarico/dists
 RoxygenNote: 7.0.2
+VignetteBuilder: knitr

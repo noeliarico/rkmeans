@@ -1,5 +1,6 @@
 #' @export
-update_rkmeans <- function(data, assignations, matrices_of_distances) {
+update_rkmeans <- function(data, assignations, matrices_of_distances,
+                           developer = FALSE) {
 
   # Calculate the matrice of distances
   #matrices_of_distances <- create_distance_matrices(data)
@@ -14,14 +15,14 @@ update_rkmeans <- function(data, assignations, matrices_of_distances) {
   # for each considered distance function that stores the distance between
   # each pair of points. Our aim is to create a ranking of objects in each
   # cluster so we need to filter the matrices in order to keep only the
-  # points to belong to each cluster so we can rank them later.
+  # points that belong to each cluster so we can rank them later.
   matrices_k <- lapply(1:k, filter_objects_in_cluster,
                        assignations, matrices_of_distances)
   names(matrices_k) <- paste0("cluster", 1:k)
   #print(matrices_k)
 
   # With the filtered rankings, we need to translate each row to a ranking.
-  # By doing this, we get to know which are the nearest object to each
+  # By doing this, we get to know which are the nearest objects to each
   # object in a concrete cluster
   rankings_of_objects <- determine_center(matrices_k)
 
@@ -34,7 +35,6 @@ update_rkmeans <- function(data, assignations, matrices_of_distances) {
 
   # Borda count is applied to the resultant profile of rankings
   #rankings_of_objects <- lapply(rankings_of_objects, borda_count)
-
 
 }
 

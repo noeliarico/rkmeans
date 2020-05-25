@@ -8,6 +8,5 @@
 #'
 #' @examples
 assignation_kmeans <- function(matrix_of_distances) {
-  print(matrix_of_distances)
   apply(matrix_of_distances, 1, which.min)
 }

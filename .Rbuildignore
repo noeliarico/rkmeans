@@ -1,2 +1,5 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^vignettes/My-first-article\.Rmd$
+^\./R/ignore_.*\.R$
+bui
